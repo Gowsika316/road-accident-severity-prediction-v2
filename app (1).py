@@ -3,8 +3,9 @@ import pandas as pd
 import joblib
 
 # Load trained model and preprocessor
-model = joblib.load("/content/accident_severity_model.pkl")
-preprocessor = joblib.load("/content/accident_preprocessor.pkl")
+
+model = joblib.load("accident_severity_model_compressed.pkl")
+preprocessor = joblib.load("accident_preprocessor (1).pkl")
 
 st.set_page_config(
     page_title="Road Accident Severity Prediction",
