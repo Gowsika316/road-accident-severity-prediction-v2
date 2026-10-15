@@ -1,51 +1,152 @@
-# Road Accident Severity Prediction Using Machine Learning
+🚗 AI-Based Road Accident Severity Prediction
 
-## Project Overview
-This project predicts the severity class of a road accident using machine learning. It uses road and environmental conditions, vehicle count, number of casualties, and other accident-related features to make a prediction through a Streamlit web application.
+An interactive machine learning application that predicts road accident severity from road, vehicle, junction, and environmental information.
 
-## Objectives
-- Predict road accident severity from input features.
-- Apply data preprocessing and categorical feature encoding.
-- Address class imbalance using SMOTENC on the training data.
-- Provide an interactive interface for users to enter accident details and view predictions.
+🌐 Live Demo
 
-## Technologies Used
-- Python
-- Pandas and NumPy
-- Scikit-learn
-- SMOTENC (imbalanced-learn)
-- Random Forest Classifier
-- Streamlit
-- Joblib
+Try the application: Road Accident Severity Prediction
 
-## Model
-A Random Forest classifier was trained using accident data. The current model achieved approximately **61.61% accuracy** on the held-out test set. Performance varies across severity classes, particularly because the dataset contains an imbalanced distribution of accident severity labels.
+📌 Project Overview
 
-## Application
-The Streamlit application accepts accident-related inputs and displays a predicted severity class and model probabilities.
+Road accidents can result in injuries and loss of life. Analysing accident-related factors can help identify patterns associated with different levels of accident severity.
 
-## Project Files
-- `app (1).py` — Streamlit application source code.
-- `accident_severity_model_compressed.pkl` — Compressed trained model.
-- `accident_preprocessor (1).pkl` — Saved preprocessing pipeline.
-- `requirements.txt` — Required Python packages.
+This project uses machine learning to predict an accident severity class based on user-provided accident details. A Streamlit web application provides an interactive interface for entering input values and viewing the model's prediction and estimated class probabilities.
 
-## How to Run Locally
-1. Install Python.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the application:
-   ```bash
-   streamlit run "app (1).py"
-   ```
+🎯 Objectives
 
-## Limitations
-This is an educational machine learning project, not a validated road-safety or emergency decision-making system. Predictions depend on the training data and may be less reliable for underrepresented severity classes. The predicted class codes should be interpreted using the dataset's official documentation.
+Analyse road accident data using machine learning.
 
-## Future Improvements
-- Improve performance on underrepresented severity classes.
-- Evaluate additional machine learning algorithms.
-- Validate predictions on independent datasets.
-- Improve the user interface and model evaluation.
+Preprocess accident data for model training.
+
+Address class imbalance in the training dataset.
+
+Predict accident severity from selected input features.
+
+Deploy the trained model as an interactive web application.
+
+🛠️ Technologies Used
+
+Programming Language: Python
+
+Data Processing: Pandas, NumPy
+
+Machine Learning: Scikit-learn, Random Forest
+
+Class Imbalance Handling: SMOTENC
+
+Model Serialization: Joblib
+
+Web Application: Streamlit
+
+Version Control: Git and GitHub
+
+📊 Dataset
+
+The project uses the India Road Accident Dataset, including the AccidentsBig.csv dataset file.
+
+The model uses accident-related features such as:
+
+Number of vehicles and casualties
+
+Day of the week
+
+Road class and road type
+
+Speed limit
+
+Junction details and control
+
+Light and weather conditions
+
+Road surface conditions
+
+Carriageway hazards
+
+Urban or rural area
+
+Police attendance at the accident scene
+
+The target variable is Accident_Severity.
+
+⚙️ Project Workflow
+
+Data collection: Load the road accident dataset.
+
+Data preprocessing: Handle missing values, remove duplicates, and prepare the input features.
+
+Feature preparation: Encode categorical features and scale numerical features where appropriate.
+
+Class imbalance handling: Apply SMOTENC to the training data to address the imbalance among severity classes.
+
+Model training: Train a Random Forest classifier.
+
+Model evaluation: Evaluate predictions on held-out test data using appropriate classification metrics.
+
+Model serialization: Save the trained model and preprocessing pipeline using Joblib.
+
+Deployment: Load the saved artifacts in a Streamlit application and display predictions.
+
+🖥️ Application Features
+
+Interactive form for entering accident details
+
+Prediction of the accident severity class
+
+Estimated probability for each severity class
+
+Web-based interface accessible through a browser
+
+🧰 How to Run Locally
+
+1. Clone the repository
+
+git clone https://github.com/Gowsika316/road-accident-severity-prediction-v2.git
+cd road-accident-severity-prediction-v2
+
+2. Install dependencies
+
+pip install -r requirements.txt
+
+3. Run the Streamlit application
+
+streamlit run "app (1).py"
+
+Ensure the saved model and preprocessing files are present in the repository's root directory.
+
+📈 Model Evaluation
+
+The model should be evaluated using metrics such as:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+Confusion matrix
+
+The final evaluation results should be added after confirming them against the held-out test dataset. Performance can vary across severity classes, particularly when the original dataset is imbalanced.
+
+⚠️ Limitations
+
+Predictions depend on the quality and coverage of the training dataset.
+
+Class imbalance and differences in performance across severity classes can affect reliability.
+
+Model probability estimates are not guarantees of real-world outcomes.
+
+This application is an academic prototype and should not be used as the sole basis for real-world emergency or road-safety decisions.
+
+🔮 Future Enhancements
+
+Improve minority-class prediction performance.
+
+Compare multiple machine learning algorithms.
+
+Add more comprehensive model evaluation and explainability.
+
+Integrate reliable real-time traffic and road-condition data, where available.
+
+Explore deployment and monitoring improvements.
